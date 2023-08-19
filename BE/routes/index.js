@@ -8,4 +8,4 @@ const initRoute = (app) =>{
     app.use(errHandler)
 }
 
-module.exports = initRoute
+module.exports = initRoute 
