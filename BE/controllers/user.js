@@ -119,6 +119,22 @@ const logout = asyncHandler(async (req, res) => {
 });
 
 
+// 
+const forgotPassword = asyncHandler(async(req,res)=> {
+  const {email} = req.query
+  if(!email) throw new Error('Missing email')
+  const user = await User.findOne({email})
+  if(!user) throw new Error('User not found')
+  const resetToken = user.createPasswordChangeToken()
+  await user.save()
+
+  // Check email
+
+  
+
+})
+
+
 
 
 
